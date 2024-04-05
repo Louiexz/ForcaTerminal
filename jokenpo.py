@@ -1,3 +1,4 @@
+import os
 from random import randint
 
 itens = ('Pedra', 'Papel', 'Tesoura')
@@ -16,5 +17,5 @@ while True:
 	else:
 		print('\n\033[32m  Erro ou empate\033[m')
 	exit = str(input('\n Deseja continuar? [S/N]: ')).upper()
-	if exit != 'S':
-		break
+	if exit != 'S': break
+ os.system('cls')

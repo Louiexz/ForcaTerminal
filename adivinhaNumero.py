@@ -1,3 +1,4 @@
+import os
 from random import randint
 
 def play():
@@ -10,7 +11,7 @@ def play():
 				print('\n Voce acertou!! ')
 				resposta = input("\nDeseja sair? [S/N) ")
 				if resposta.lower() in "sim, s": break
-				else: print(); play()
+				else: print(); play(); os.system('cls')
 			elif tentativa > numero: print('\n Muito alto!')
 			else: print('\n Muito baixo!')
 		except TypeError: print("\n Apenas números inteiros.")

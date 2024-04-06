@@ -1,10 +1,14 @@
 import os
 from random import randint
 
-itens = ('Pedra', 'Papel', 'Tesoura')
-print('\033[37m  Vamos jogar Jokenpo\n\n Para pedra digite: [0]\n Para papel digite: [1]\n Para tesoura digite: [2]')
+def run():
+    print('\033[37m  Vamos jogar Jokenpo\n\n Para pedra digite: [0]\n Para papel digite: [1]\n Para tesoura digite: [2]')
+    
+    loop()
 
-while True:
+def loop():
+	itens = ('Pedra', 'Papel', 'Tesoura')
+	
 	escolha = int(input('\n\033[33m Qual a sua escolha?\033[m '))
 	pc = randint(0, 2)
 	print(f'\033[37m Computador jogou {itens[pc]}')
@@ -17,5 +21,8 @@ while True:
 	else:
 		print('\n\033[32m  Erro ou empate\033[m')
 	exit = str(input('\n Deseja continuar? [S/N]: ')).upper()
-	if exit != 'S': break
- os.system('cls')
+	if exit.lower() in 's, sim':
+	    os.system('clear')
+	    run()
+
+run()

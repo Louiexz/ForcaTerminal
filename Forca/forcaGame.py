@@ -68,8 +68,8 @@ class forca:
 		
     		endChoice = input('\n\033[m Deseja continuar? [S/N] ').strip().lower()
 		
-    		if endChoice == 'n': break
-   		 os.system('cls')
+    		if endChoice in 'n, nao': break
+   		 os.system('clear')
 	
     def playGame(self):
     	print('\033[37m\tJogo da Forca\n Temas: Países, Comidas, Objetos, Roupas\n')

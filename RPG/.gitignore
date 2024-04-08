@@ -1,0 +1,5 @@
+scripts/__pycache__
+scripts/character/__pycache__
+scripts/enemy/__pycache__
+scripts/game/__pycache__
+scripts/main/__pycache__

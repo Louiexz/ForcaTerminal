@@ -1,18 +1,24 @@
-from adivinhar import adivinharJogo as jogo
+import os
+from functs import Memoria as jogo
 
-def playGame():
-    cards = jogo().ajustLen()
+def continue_game():
+    if input("\n Deseja sair? [S/N] ").lower() in 'nao, n, não':
+        try: os.system('cls')
+        except Exception as e: os.system(e, 'clear')
+        finally: play_game()
+
+def play_game():
+    cards = jogo().ajust_len()
+    print("\n Bem-vindo(a) ao jogo da Mémoria com números!")
     while True:
         try:
-            print("Escolha até no máximo 10 bilhetes")
+            print("\n Escolha até no máximo 10 bilhetes")
             x = int(input(" Quantas bilhetes deseja? "))
             if x < 10:
                 for _ in range(x):
-                    acerto = jogo().userChoice(cards)
-                    if acerto: print("Você acertou!")
-                    else: print("Você errou")
-
-                resposta = input("Deseja sair? [S/N] ")
+                    acerto = jogo().user_choice(cards)
+                    if acerto: print(" Você acertou!")
+                    else: print(" Você errou")
                 
-                if reposta.lower() in 'sim, s': break
+                continue_game()
         except ValueError: print(" Apenas números.")
